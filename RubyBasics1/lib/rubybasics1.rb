@@ -27,19 +27,26 @@ end
 # Part III
 def sum_to_n? arr, n
   # YOUR CODE HERE
-  
-  if arr.size == 0
+  if (arr.length == 0)
     return false
   end
+  if (arr.length == 1)
+    return false
+  end
+  sorted_arr = arr.sort
+  head =0
+  tail = sorted_arr.length-1
   
-  for i in 0..arr.size-1 #start from the beginning of the array
-  y = i + 1 #add another pointer
-    for y in y..arr.size-1 #have find a number to add with the other pointer
-        if arr[i] + arr[y] == n #determine if they add up to n
-            return true
-        end
+  while head < tail 
+    current_sum = sorted_arr[head] + sorted_arr[tail]
+    if current_sum == n
+      return true
+    elsif current_sum < n
+      head = head + 1
+    else 
+      tail = tail - 1
     end
-  end #if n is 0 or the array is empty, then there is nothing to add
-  return false if n == 0 && arr.size == 0
+  end
   return false
+
 end
