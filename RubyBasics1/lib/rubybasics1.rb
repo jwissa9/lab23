@@ -27,4 +27,19 @@ end
 # Part III
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  
+  if arr.size == 0
+    return false
+  end
+  
+  for i in 0..arr.size-1 #start from the beginning of the array
+  y = i + 1 #add another pointer
+    for y in y..arr.size-1 #have find a number to add with the other pointer
+        if arr[i] + arr[y] == n #determine if they add up to n
+            return true
+        end
+    end
+  end #if n is 0 or the array is empty, then there is nothing to add
+  return false if n == 0 && arr.size == 0
+  return false
 end
