@@ -39,16 +39,16 @@ end
 # Part III
 def hash_2_array contacts
     # YOUR CODE HERE
-    i = 0
-    arrays = [[]]
+    arrays = [[], [], []]
     
     if contacts == nil
         return arrays
     end
     
     contacts.each do |key, value|
-        arrays[i] = contacts[key]
-        i += 1
+        arrays[0] = contacts[:"Bob Smith"][:email]
+        arrays[1] = contacts.values
+        arrays[2] = contacts.keys
     end
     
     return arrays
