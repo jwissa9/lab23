@@ -3,6 +3,9 @@
 # Part I
 def hello(name)
   # YOUR CODE HERE
+  hi = "Hello, "
+  total = hi + name
+  return total
 end
 
 # Part II
